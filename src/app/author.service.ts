@@ -1,9 +1,6 @@
-import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthorService {
-
-  constructor() { }
+export class AuthorsService {
+  getAuthors(){
+    return ["First Author","Second Author"];
+  }
 }
