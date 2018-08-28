@@ -1,11 +1,12 @@
 import { CarsService } from './cars.service';
 import { AuthorsComponent } from './authors.component';
-import { AuthorService, AuthorsService } from './author.service';
+import { AuthorsService } from './author.service';
 import { CoursesService } from './courses.service';
 import { CoursesComponent } from './courses.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
@@ -22,7 +23,8 @@ import { CarsComponent } from './cars/cars.component';
     CarsComponent 
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     CoursesService,

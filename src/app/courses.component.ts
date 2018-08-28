@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'courses', // <courses>
     template: `
-        <input #email (keyup.enter)="onKeyUp(email.value)"/>
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
     `
 })
 
@@ -12,12 +12,13 @@ export class CoursesComponent {
     title = "List of courses";
     courses;
     isActive = false;
+    email = "myEmail@yahoo.com"; // This does not need to be pre-defined
 
     constructor(service: CoursesService) {
         this.courses = service.getCourses();
     }
 
-    onKeyUp(email) {
-        console.log(email.value);
+    onKeyUp() {
+        console.log(this.email);
     }
 }
