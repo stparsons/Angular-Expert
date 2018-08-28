@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'courses', // <courses>
     template: `
-        <input (keyup.enter)="onKeyUp()"/>
+        <input #email (keyup.enter)="onKeyUp(email.value)"/>
     `
 })
 
@@ -17,7 +17,7 @@ export class CoursesComponent {
         this.courses = service.getCourses();
     }
 
-    onKeyUp() {
-        console.log("ENTER WAS PRESSED");
+    onKeyUp(email) {
+        console.log(email.value);
     }
 }
