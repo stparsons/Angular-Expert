@@ -9,23 +9,34 @@ export class TitleCasePipe implements PipeTransform {
     
     if(!value) return null;
 
+
+    
+    let words = value.split( ' ' );
+    for(var i=0; i<words.length; i++ ) {
+        if(i != 0 && this.isPrePosition(words[i])) {
+          words[i] = words[i].toLowerCase();
+        }
+        else {
+          words[i] = this.toTitleCase(words[i]);
+        }         
+    }
+
+    return words.join(' ');    
+  }
+
+  private isPrePosition(word: string): boolean {
     let prepositions = [
       "the",
       "is",
       "of"
     ]
-    
-    let words = value.split( ' ' );
-    for(var i=0; i<words.length; i++ ) {
-        if(i != 0 && prepositions.includes(words[i].toLowerCase())) {
-          words[i] = words[i].toLowerCase();
-        }
-        else {
-          words[i] = words[i].substr(0,1).toUpperCase() + words[i].substr(1).toLocaleLowerCase();
-        }         
-    }
 
-    return words.join(' ');    
+    return prepositions.includes(word.toLowerCase());
+  }
+
+  private toTitleCase(word:string): string {
+    return word.substr(0,1).toUpperCase() + word.substr(1).toLocaleLowerCase();
+    
   }
 
 }
