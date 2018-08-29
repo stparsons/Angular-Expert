@@ -16,6 +16,7 @@ import { CarsComponent } from './cars/cars.component';
 import { StarComponent } from './star/star.component';
 import { TextTransformComponent } from './text-transform/text-transform.component';
 import { TitleCasePipe } from './title-case.pipe';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TitleCasePipe } from './title-case.pipe';
     SummaryPipe,
     StarComponent,
     TextTransformComponent,
-    TitleCasePipe 
+    TitleCasePipe,
+    FavoriteComponent 
   ],
   imports: [
     BrowserModule,

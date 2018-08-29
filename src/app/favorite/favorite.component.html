@@ -1,0 +1,8 @@
+<H1>Star Test</H1>
+<div>
+  <span  class="glyphicon" 
+    [class.glyphicon-star]="isFavorite"
+    [class.glyphicon-star-empty]="!isFavorite"
+    (click)="onClick()">
+  </span>
+</div>
