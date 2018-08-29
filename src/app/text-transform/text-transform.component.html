@@ -1,0 +1,5 @@
+<h1>Text Transform</h1>
+<div>
+    <p><input [(ngModel)]="text" (keyup)="onKeyUp()" type="text"></p>
+    <p><label for="">{{ text | titleCase }}</label></p>
+</div>
