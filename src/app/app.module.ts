@@ -18,6 +18,7 @@ import { TextTransformComponent } from './text-transform/text-transform.componen
 import { TitleCasePipe } from './title-case.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { LikeComponent } from './like/like.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LikeComponent } from './like/like.component';
     TextTransformComponent,
     TitleCasePipe,
     FavoriteComponent,
-    LikeComponent 
+    LikeComponent,
+    PanelComponent 
   ],
   imports: [
     BrowserModule,
