@@ -1,0 +1,22 @@
+<div class="zippy">
+  <div 
+    class="zippy-heading"
+    [ngStyle]="{'background': showBody ? 'lightgrey': 'white'}" 
+    (click)="onClick()"
+    >
+    {{title}}
+    <span>
+        <ng-content select=".heading"></ng-content>
+    </span>
+    <span class="glyphicon"
+      [ngClass]="{
+        'glyphicon-chevron-down' : !showBody,
+        'glyphicon-chevron-up' : showBody
+      }"
+    >
+    </span>
+  </div>
+  <div *ngIf="showBody" class="zippy-body" >
+    <ng-content select=".body"></ng-content>
+  </div>
+</div>
