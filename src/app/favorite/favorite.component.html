@@ -1,12 +1,24 @@
-<style>
-
-</style>
-
-<H1>Star Test</H1>
+<!-- 
+  Glyphicon below has 2 options to render the class
+    1 uses class binding
+    2 the other uses ngClass binding 
+-->
 <div>
   <span  class="glyphicon" 
     [class.glyphicon-star]="isSelected"
     [class.glyphicon-star-empty]="!isSelected"
+    
     (click)="onClick()">
   </span>
+</div>
+<hr>
+<div>
+    <span  class="glyphicon" 
+      [ngClass]="{
+       'glyphicon-star': isSelected, 
+       'glyphicon-star-empty': !isSelected
+      }"    
+    (click)="onClick()">
+  </span>
+
 </div>

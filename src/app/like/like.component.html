@@ -1,3 +1,12 @@
-<p>
-  like works!
-</p>
+<h2>Like Component</h2>
+<div>
+  <span class="glyphicon glyphicon-heart" 
+    [class.highlighted]="isActive"
+    (click)="onClick()"
+  >
+      &nbsp;
+  </span>
+  <span class="label label-default">
+      {{ likesCount }}
+  </span>
+</div>

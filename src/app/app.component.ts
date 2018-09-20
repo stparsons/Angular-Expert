@@ -6,13 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Hello-World';
-  post = {
-    title: "Title",
-    isFavorite: true
+  canSave = false;
+  courses = [
+    {id: 1, name: 'Course A'},
+    {id: 2, name: 'Course B'},
+    {id: 3, name: 'Course C'}   
+  ];
+  
+  onAdd(){
+    this.courses.push({id:5, name: 'Course D'});
   }
 
-  onFavoriteChange(newValue) {
-    console.log("CLICKED - onFavoriteChange", newValue);
+  onRemove(course){
+    let index = this.courses.indexOf(course);
+    this.courses.splice(index, 1);
+  }
+
+  onChange(course){
+    course.name = "changed";
   }
 }
