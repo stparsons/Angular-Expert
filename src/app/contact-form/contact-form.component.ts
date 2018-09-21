@@ -11,6 +11,7 @@ export class ContactFormComponent {
   }
 
   submit(f) {
-    console.log(f.value);
+    console.log(f); // Logs the NgForm and all of it
+    console.log(f.value); // Logs the value of f, which is a json version
   }
 }
