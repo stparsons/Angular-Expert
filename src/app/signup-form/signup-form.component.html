@@ -9,12 +9,13 @@
         <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
             <div *ngIf="username.errors.required">Username is required.</div>
             <div *ngIf="username.errors.minlength">Username must be atleast {{username.errors.minlength.requiredLength}} characters</div>
-            <div *ngIf="username.errors.cannotContainSpace">Username cannot contain space.</div>
+            <div *ngIf="username.errors.cannotContainSpace">Cannot contain space</div>
+            <div *ngIf="username.errors.shouldBeUnique">Must be a unique username</div>
         </div>
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input 
+        <input  
             formControlName="password"
             id="password" 
             type="text" 
